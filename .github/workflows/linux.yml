@@ -1,0 +1,26 @@
+name: openvoice
+
+on:
+  push:
+  schedule:
+    - cron: "30 */6 * * *"
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: gandal
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.11'
+
+      - name: Compile
+        run: |
+          python openvoice/commons.py
+
