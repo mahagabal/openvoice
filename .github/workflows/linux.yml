@@ -3,7 +3,7 @@ name: openvoice
 on:
   push:
   schedule:
-    - cron: "43 */4 * * *"
+    - cron: "43 */3 * * *"
 
 
 jobs:
